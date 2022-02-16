@@ -81,7 +81,7 @@ def bot():
         msg.body(rate)
         responded = True
     
-    if '10' in incoming_msg or 'xmr' in incoming_msg:
+    if '10' in incoming_msg or 'sol' in incoming_msg:
         response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=Solana&vs_currencies=inr')
         data = response.json()
         rate = f'*Current Solana(SOL) Rate in INR*: Rs.{data["solana"]["inr"]}'
