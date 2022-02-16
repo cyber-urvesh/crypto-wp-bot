@@ -18,11 +18,6 @@ def bot():
     msg = resp.message()
     responded = False
 
-    if 'Hi' in incoming_msg:
-        text = f'*Please enter one of the following option to get current rates in INR👇* \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XLM)* \n *7*. Dogecoin *(DOGE)* '
-        msg.body(text)
-        responded = True
-
     if '1' in incoming_msg or 'btc' in incoming_msg:
         response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=inr')
         data = response.json()
@@ -71,9 +66,30 @@ def bot():
         rate = f'*Current Dogecoin(DOGE) Rate in INR*: Rs.{data["dogecoin"]["inr"]}'
         msg.body(rate)
         responded = True
+
+    if '8' in incoming_msg or 'dot' in incoming_msg:
+        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=Polkadot&vs_currencies=inr')
+        data = response.json()
+        rate = f'*Current Polkadot(DOT) Rate in INR*: Rs.{data["polkadot"]["inr"]}'
+        msg.body(rate)
+        responded = True
+
+    if '9' in incoming_msg or 'xmr' in incoming_msg:
+        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=Monero&vs_currencies=inr')
+        data = response.json()
+        rate = f'*Current Monero(XMR) Rate in INR*: Rs.{data["monero"]["inr"]}'
+        msg.body(rate)
+        responded = True
+    
+    if '10' in incoming_msg or 'xmr' in incoming_msg:
+        response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=Solana&vs_currencies=inr')
+        data = response.json()
+        rate = f'*Current Solana(SOL) Rate in INR*: Rs.{data["solana"]["inr"]}'
+        msg.body(rate)
+        responded = True
     
     if not responded:
-        text = f'*Please enter one of the following option to get current rates in INR👇* \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XLM)* \n *7*. Dogecoin *(DOGE)* '
+        text = f'*Please enter one of the following option to get current rates in INR👇* \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XLM)* \n *7*. Dogecoin *(DOGE)* \n *8*. Polkadot *(DOT)* \n *9*. Monero *(XMR)* \n *10*. Solana *(SOL)* '
         msg.body(text)
         responded = True
 
