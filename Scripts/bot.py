@@ -18,7 +18,7 @@ def bot():
     responded = False
 
     if 'Hi' in incoming_msg:
-        text = f'Hello 🙋🏽‍♂, \nThis is a Crypto Prices-Bot developed by Varun Herlekar to provide latest crypto prices \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XRP)* \n *7*. Dogecoin *(DOGE)* '
+        text = f'Hello🙋🏽‍♂, \nThis is a Crypto Prices-Bot developed by Varun Herlekar to provide latest crypto prices \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XRP)* \n *7*. Dogecoin *(DOGE)* '
         msg.body(text)
         responded = True
 
