@@ -9,7 +9,8 @@ A WhatsApp bot for fetching current cryptocurrency market values written in Pyth
 ## Demo
 
 To use this bot, simply click on this [LINK](https://api.whatsapp.com/send?phone=14155238886&text=join%20season-create&source=&data=). Send a WhatsApp message with the code join **season-create** to (+1) 415523 8886. It will display a notification stating that it is linked to the sandbox. Begin by saying Hi, and it will display the subsequent chats.
-                      ![enter image description here](https://github.com/varunherlekar/crypto-wp-bot/blob/main/output.gif?raw=true)
+
+![enter image description here](https://github.com/varunherlekar/crypto-wp-bot/blob/main/output.gif?raw=true)
 ## Technologies Adopted
 1. Twilio - https://www.twilio.com/console
 2. Heroku - https://www.heroku.com/
