@@ -19,7 +19,7 @@ def bot():
     responded = False
 
     if 'Hi' in incoming_msg:
-        text = f'Hello🙋🏽‍♂, \nThis is a Crypto Prices-Bot developed by Varun Herlekar to provide latest crypto prices \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XRP)* \n *7*. Dogecoin *(DOGE)* '
+        text = f'Hello🙋🏽‍♂, \nThis is a Crypto Prices-Bot developed by Varun Herlekar to provide latest crypto prices \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XLM)* \n *7*. Dogecoin *(DOGE)* '
         msg.body(text)
         responded = True
 
@@ -58,7 +58,7 @@ def bot():
         msg.body(rate)
         responded = True
     
-    if '6' in incoming_msg:
+    if '6' in incoming_msg or 'xlm' in incoming_msg:
         response = requests.get('https://api.coingecko.com/api/v3/simple/price?ids=Stellar&vs_currencies=inr')
         data = response.json()
         rate = f'*Current Stellar(XLM) Rate in INR*: Rs.{data["stellar"]["inr"]}'
@@ -72,10 +72,11 @@ def bot():
         msg.body(rate)
         responded = True
     
-    if not responded:
-        text = f'Hello🙋🏽‍♂, \nThis is a Crypto Prices-Bot developed by Varun Herlekar to provide latest crypto prices \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XRP)* \n *7*. Dogecoin *(DOGE)* '
+    if responded == "False":
+        text = f'*Invalid Entry* \n\n Please enter one of the following option 👇 \n *1*. Bitcoin *(BTC)* \n *2*. Litecoin *(LTC)* \n *3*. Ethereum *(ETH)* \n *4*. Tether *(USDT)* \n *5*. Cardiano *(ADA)* \n *6*. Steller *(XRP)* \n *7*. Dogecoin *(DOGE)* '
         msg.body(text)
         responded = True
+
     return str(resp)
 
 
